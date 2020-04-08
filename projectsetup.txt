@@ -1,0 +1,42 @@
+Everyday, Keep Moving Forward
+
+We need:
+firstname(string)
+lastname(string)
+password(string)
+email(string)
+id(auto generated) (integer)
+Designation( thier role in the hospital)(string)
+Department(string)
+
+
+
+Register
+*** 3 levels Access control levels
+++ Medical Team(Hospital Staff)
+++ Super Admin(MD)
+++ Patients
+
+
+login
+++email
+++ password
+Forgot password
+--- page to receive user email
+--- page to perform actual password reset 
+--- verify that the email exist
+--- verify that they have access to the email.
+Tools to send email locally
+--mailtrap.io
+--sendmail local setup
+
+Change password
+-- Old password
+-- New Password
+log activities/server -issues
+Dashboard
+-- You are logged in as -roleName, name and office or Department
+Push to GitHub
+host it
+**************************
+Filesystem
