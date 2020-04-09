@@ -7,11 +7,15 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
   header('Location: dashboard.php');
 }
 ?>
-<p><strong>Welcome Please Register Here</strong></p>
-<h3>Register</h3>
-<p>All fields are required</p>
 
-<form action="processregister.php" method="POST">
+
+	<!-- Main Content -->
+	<div class="main">
+		<div class="main-w3l">
+			<h1 class="logo-w3">Space Register Form</h1>
+			<div class="w3layouts-main">
+				<h2><span>Register now</span></h2>
+        <form action="processregister.php" method="POST">
 <?php error();message();?>
   <P>
     <label for="">First Name</label>
@@ -49,7 +53,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
     <input type="password" name="password" placeholder="Password" required />
   </P>
   <p>
-  <label for="">Gender</label>
+  <label for="">Gender</label><br/>
     <select name="gender" required >
     
       <option value="">Select One</option>
@@ -71,7 +75,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
   </p>
   
   <p>
-  <label for="">Designation</label>
+  <label for="">Designation</label> <br/>
     <select name="designation" required>
       <option value="">Select One</option>
       <option 
@@ -110,4 +114,9 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
   </p>
   <button type="submit">register</button>
 </form>
+				
+			</div>
+			<!-- //main -->
+
+
 <?php include_once'lib/footer.php'?>

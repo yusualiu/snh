@@ -7,10 +7,24 @@ if(!isset($_SESSION['loggedin'])){
   header('Location: login.php');
 }
 ?>
-<h3>Dashboard</h3>
-<p>Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?>,your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p>
-<p>Add User below</p>
-<form action="processregister.php" method="POST">
+
+
+
+
+
+
+
+
+	<!-- Main Content -->
+	<div class="main">
+  
+		<div class="main-w3l">
+    <h3>Dashboard</h3>
+<p class="logo-w3">Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?>,your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p>
+    <p>Add User below</p>
+    
+			<div class="w3layouts-main-admin">
+      <form action="processregister.php" method="POST">
 <?php error();message();?>
   <P>
     <label for="">First Name</label>
@@ -109,4 +123,16 @@ if(!isset($_SESSION['loggedin'])){
   </p>
   <button type="submit">Add User</button>
 </form>
+			</div>
+			<!-- //main -->
+
+
+
+
+
+
+
+
+
+
 <?php include_once'lib/footer.php'?>

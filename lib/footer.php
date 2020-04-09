@@ -14,5 +14,15 @@
 
 </p>
   
+<!--footer-->
+<div class="footer-w3l">
+				<p>&copy; 2018 Space Register Form. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+			</div>
+			<!--//footer-->
+			
+		</div>
+	</div>
+	<!-- //Main Content -->
+
 </body>
 </html>
