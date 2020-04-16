@@ -11,9 +11,6 @@ require_once 'functions/alert.php';
 ?>
 
 
-<!-- Main Content -->
-<div class="main">
-		<div class="main-w3l">
     <h1 class="logo-w3">Reset Password </h1>
     <p>Provide the new password for your account : [email]</p>
 			
@@ -60,7 +57,6 @@ require_once 'functions/alert.php';
 </p>
 
 </form>
-			</div>
-			<!-- //main -->
+		
 
 <?php include_once'lib/footer.php'?>

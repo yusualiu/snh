@@ -9,11 +9,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
 ?>
 
 
-	<!-- Main Content -->
-	<div class="main">
-		<div class="main-w3l">
-			<h1 class="logo-w3">Space Register Form</h1>
-			<div class="w3layouts-main">
+
 				<h2><span>Register now</span></h2>
         <form action="processregister.php" method="POST">
 <?php error();message();?>
@@ -114,9 +110,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
   </p>
   <button type="submit">register</button>
 </form>
-				
-			</div>
-			<!-- //main -->
+
 
 
 <?php include_once'lib/footer.php'?>

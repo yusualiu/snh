@@ -10,10 +10,7 @@ require_once 'functions/alert.php';
 
 
 
-<!-- Main Content -->
-<div class="main">
-		<div class="main-w3l">
-			<div class="w3layouts-main">
+
         <h2><span>Forgot Password</span></h2>
         <p>Provide the email address associated with your account</p>      
         <form action="processforgot.php" method="POST">
@@ -31,8 +28,7 @@ require_once 'functions/alert.php';
   <button type="submit">Send Reset Code</button>
 </form>
        
-			</div>
-      <!-- //main -->
+		
       
 
 

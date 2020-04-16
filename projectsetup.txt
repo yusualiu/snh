@@ -39,4 +39,31 @@ Dashboard
 Push to GitHub
 host it
 **************************
-Filesystem
+Patient page
+--Book Appointment with Medical Team
+---Pay Bill(Blank page)
+
+-Book Appointment Form
+*Name of Patient 
+*Email of Patient 
+*Date of Appointment(DateTime form)
+*Time of Appointment(DateTime form)
+*Nature of Appointment(string)
+*Initial complaint(string)
+*Appointment Department(string)
+
+
+Medical Team page
+*Your own appointment(based on your department)
+* See patient details
+-Patient Name
+Email of Patient 
+*Date of Appointment(DateTime form)
+*Time of Appointment(DateTime form)
+*Nature of Appointment(string)
+*Initial complaint(string)
+*Appointment Department(string)
+
+Super Admin page
+-View all staff
+-View all patients

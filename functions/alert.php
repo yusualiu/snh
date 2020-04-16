@@ -15,4 +15,15 @@ function message(){
     session_destroy();
   }
 }
+function dashboardMessage(){
+  if(isset($_SESSION['message']) && !empty($_SESSION['message'])){
+    echo "<span style='color:green;'>".$_SESSION['message']."</span>";
+    
+    
+  }
+  if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+    echo "<span style='color:red;'>".$_SESSION['error']."</span>";
+    
+  }
+}
 

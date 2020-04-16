@@ -55,7 +55,9 @@ if($errorCount > 0){
     'email' => $email,
     'gender' =>$gender,
     'designation' =>$designation,
-    'department'=> $department
+    'department'=> $department,
+    'createdTime'=> date("Y-m-d h:i:s"),
+    'lastLogin'=> ""
   ];
 
   // ****Look into the folder and check if file already exist 
@@ -70,8 +72,7 @@ if($errorCount > 0){
   }
   //save object at created time to folder
   
-  $user_object['createdTime'] = date("F Y h:i:s A");
-  $user_object['lastLogin'] = "";
+  
   file_put_contents('db/users/'.$email.'.json',json_encode($user_object));
   if(isset($_SESSION['role']) && $_SESSION['role']=="Super Admin(MD)"){
     $_SESSION['message'] = 'Registration Successfull,User '.$first_name.' can now login!';
@@ -86,4 +87,3 @@ if($errorCount > 0){
 
 
 
-// return back to the page, with a status message

@@ -40,10 +40,11 @@ if($errorCount > 0){
         $_SESSION['email'] = $userObject->email;
         $_SESSION['fullname'] = $userObject->first_name." ".$userObject->last_name;
         $_SESSION['role'] = $userObject->designation;
+        $_SESSION['department'] = $userObject->department;
         $_SESSION['createdTime'] = $userObject->createdTime;
 
         // update user record in folder with lastloggedin 
-        $userObject->lastLogin = date("F Y h:i:s A");
+        $userObject->lastLogin = date("Y-m-d h:i:s");
         unlink("db/users/".$currentUser);
        
         file_put_contents('db/users/'.$email.'.json',json_encode($userObject));
@@ -55,9 +56,11 @@ if($errorCount > 0){
               break;
           case "Medical Team(MT)":
             header('Location: medicalteam.php');
-              break;              
-          default:
+              break;
+          case "Patients":
             header('Location: patient.php');
+              break;              
+         
       }
         
         // header('Location: dashboard.php');

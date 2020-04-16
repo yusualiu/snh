@@ -1,0 +1,10 @@
+// foreach ($patientData as $key => $value) {
+//   foreach($value as $bookings){
+//     print_r($bookings);
+//     echo $bookings['appointmemtDepartment'];
+//     ?>
+//     <h1>The Departmental Patient Records </h1>
+//   <?php
+//   }
+  
+// }
