@@ -14,7 +14,7 @@ require_once 'functions/alert.php';
         <h2><span>Forgot Password</span></h2>
         <p>Provide the email address associated with your account</p>      
         <form action="processforgot.php" method="POST">
-<p><?php error();message();?></p>
+<p><?php printAlert();?></p>
 <P>
     <label for="">Email</label><br/>
     <input 
@@ -23,7 +23,7 @@ require_once 'functions/alert.php';
         echo "value=".$_SESSION['email'];
       }
     ?>
-    type="email" name="email" placeholder="Email" required/>
+    type="email" name="email" placeholder="Email"/>
   </P>
   <button type="submit">Send Reset Code</button>
 </form>

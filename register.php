@@ -12,7 +12,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
 
 				<h2><span>Register now</span></h2>
         <form action="processregister.php" method="POST">
-<?php error();message();?>
+<?php printAlert();?>
   <P>
     <label for="">First Name</label>
     <input 
@@ -21,7 +21,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
         echo "value=".$_SESSION['first_name'];
       }
     ?> 
-     type="text" name="first_name" placeholder="First Name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required/>
+     type="text" name="first_name" placeholder="First Name" />
   </P>
   <P>
     <label for="">Last Name</label>
@@ -31,7 +31,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
         echo "value=".$_SESSION['last_name'];
       }
     ?>
-    type="text" name="last_name" placeholder="Last Name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required />
+    type="text" name="last_name" placeholder="Last Name" />
   </P>
   <P>
     <label for="">Email</label>
@@ -42,15 +42,15 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
         echo "value=".$_SESSION['email'];
       }
     ?>
-    type="email" name="email" placeholder="Email" required/>
+    type="email" name="email" placeholder="Email" />
   </P>
   <P>
     <label for="">Password</label>
-    <input type="password" name="password" placeholder="Password" required />
+    <input type="password" name="password" placeholder="Password"  />
   </P>
   <p>
   <label for="">Gender</label><br/>
-    <select name="gender" required >
+    <select name="gender"  >
     
       <option value="">Select One</option>
       <option 
@@ -72,7 +72,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
   
   <p>
   <label for="">Designation</label> <br/>
-    <select name="designation" required>
+    <select name="designation" >
       <option value="">Select One</option>
       <option 
       <?php
@@ -106,7 +106,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
         echo "value=".$_SESSION['department'];
       }
     ?>
-     type="text" name="department" placeholder="Department" required />
+     type="text" name="department" placeholder="Department" />
   </p>
   <button type="submit">register</button>
 </form>

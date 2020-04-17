@@ -110,7 +110,7 @@ if(!isset($_SESSION['loggedin'])){
 		<br>
     <p>Add User below</p>
       <form action="processregister.php" method="POST">
-<?php error();message();?>
+<?php printAlert();?>
   <P>
     <label for="">First Name</label>
     <input 

@@ -11,13 +11,13 @@ require_once 'functions/alert.php';
 ?>
 
 
-    <h1 class="logo-w3">Reset Password </h1>
+    <h1 >Reset Password </h1>
     <p>Provide the new password for your account : [email]</p>
 			
-			<div class="w3layouts-main">
+		
       <form action="processreset.php" method="POST">
 
-<p><?php error();message();?></p>
+<p><?php printAlert();?></p>
 
 
 <P>
@@ -29,11 +29,11 @@ require_once 'functions/alert.php';
     }
 
   ?>
-  type="email" name="email" placeholder="Email" required/>
+  type="email" name="email" placeholder="Email" />
 </P>
 <P>
   <label for="">Enter New Password</label><br/>
-  <input type="password" name="password" placeholder="Password" required/>
+  <input type="password" name="password" placeholder="Password" />
 </P>
 <?php 
   if(!isset($_SESSION['loggedin'])){?>

@@ -8,7 +8,7 @@ require_once 'functions/alert.php';
 			
 
         <h2><span>Login</span></h2>
-        <p><?php error();message();?></p>
+        <p><?php printAlert();?></p>
         <form action="processlogin.php" method="POST">
 
         <P>
@@ -19,11 +19,11 @@ require_once 'functions/alert.php';
               echo "value=".$_SESSION['email'];
             }
           ?>
-          type="email" name="email" placeholder="Email" required />
+          type="email" name="email" placeholder="Email"  />
         </P>
         <P>
           <label for="">Password</label>
-          <input type="password" name="password" placeholder="Password" required />
+          <input type="password" name="password" placeholder="Password"  />
         </P>  
 
         <button type="submit">login</button>

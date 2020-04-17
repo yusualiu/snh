@@ -4,7 +4,7 @@ require_once 'functions/alert.php';
 
 
 
-      <p><?php error();message();?></p>
+      <p><?php printAlert();?></p>
 <p>Welcome to SNG hostpital. We are happy you are. We hope you have a great time with us</p>     
        
 		
