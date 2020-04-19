@@ -1,5 +1,5 @@
 <?php
-
+require_once 'functions/user.php';
 session_start();
 
 $errorCount = 0;
@@ -26,7 +26,8 @@ if($errorCount > 0){
     $s = '';
   }
   $_SESSION['error'] = 'You have '.$errorCount.' error'.$s.' in your form submission';
-  header('Location:reset.php');
+
+  redirectUrl('reset.php');
   
 }else{
 //Check if email exist in token folder
@@ -71,7 +72,7 @@ if($errorCount > 0){
             $headers = "From: no-reply@snh.org" . "\r\n" .
             "CC: aliuyusuf@snh.org";
             $try = mail($email,$subject,$message,$headers);
-            header('Location: login.php');  
+            redirectUrl('login.php');
             die(); 
           }
         }
@@ -84,7 +85,8 @@ if($errorCount > 0){
   }
   
   $_SESSION['error'] = 'Password reset Failed, Invalid or Expired token';
-  header('Location: login.php');
+ 
+  redirectUrl('login.php');
 
 }
 

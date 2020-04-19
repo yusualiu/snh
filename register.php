@@ -2,13 +2,12 @@
 <?php 
 include_once'lib/header.php';
 require_once 'functions/alert.php';
+require_once 'functions/user.php';
 $emailErr = "";
-if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
-  header('Location: dashboard.php');
+if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){ 
+  redirectUrl('dashboard.php');
 }
 ?>
-
-
 
 				<h2><span>Register now</span></h2>
         <form action="processregister.php" method="POST">

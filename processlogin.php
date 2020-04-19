@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once 'functions/user.php';
 // Collect user data
 // verifying the data, validation
 $errorCount = 0;
@@ -18,7 +19,8 @@ if($errorCount > 0){
     $s = '';
   }
   $_SESSION['error'] = 'You have '.$errorCount.' error'.$s.' in your form submission';
-  header('Location:login.php');
+  
+  redirectUrl('login.php');
   
 }else{
   // check if email is found
@@ -51,14 +53,14 @@ if($errorCount > 0){
         $_SESSION['lastLogin']= $userObject->lastLogin;
         // User Access Level
         switch ($userObject->designation) {
-          case "Super Admin(MD)":
-            header('Location: admin.php');
+          case "Super Admin(MD)":           
+            redirectUrl('admin.php');            
               break;
-          case "Medical Team(MT)":
-            header('Location: medicalteam.php');
+          case "Medical Team(MT)":            
+            redirectUrl('medicalteam.php');
               break;
-          case "Patients":
-            header('Location: patient.php');
+          case "Patients":            
+            redirectUrl('patient.php');
               break;              
          
       }
@@ -69,5 +71,6 @@ if($errorCount > 0){
     }
   }
   $_SESSION['error'] = 'Invalid Email or Password';
-  header('Location: login.php');
+  
+  redirectUrl('login.php');
 }

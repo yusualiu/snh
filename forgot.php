@@ -3,14 +3,6 @@ require_once 'functions/alert.php';
 
 ?>
 
-
-
-
-
-
-
-
-
         <h2><span>Forgot Password</span></h2>
         <p>Provide the email address associated with your account</p>      
         <form action="processforgot.php" method="POST">

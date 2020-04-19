@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require_once 'functions/user.php';
 $errorCount = 0;
 
 $email = $_POST['email'] != "" ? $_POST['email'] : $errorCount++;
@@ -15,7 +15,8 @@ if($errorCount > 0){
     $s = '';
   }
   $_SESSION['error'] = 'You have '.$errorCount.' error'.$s.' in your form submission';
-  header('Location:forgot.php');
+
+  redirectUrl('forgot.php');
   
 }else{
   $allUsers = scandir("db/users/");
@@ -27,16 +28,7 @@ if($errorCount > 0){
     if($currentUser == $email.".json"){
      // send email to the email found
       // Generating Token 
-
-      $token = ""; 
-
-      $alphabets = ['a','b','c','d','e','f','g','h','A','B','C','D','E','F','G','H'];
-  
-      for($i = 0 ; $i < 26 ; $i++){
-  
-        $index = mt_rand(0,count($alphabets)-1);
-        $token .= $alphabets[$index];
-      }
+      $token = generateToken();
 
       $subject = "SNG HOSPITAL PASSWORD RESET LINK";
       $message = "A password reset has been initiated from your account, please visit: localhost/snh/reset.php?token=".$token." to reset your password. If you have not initiated this action kindly ignore this email.";
@@ -65,5 +57,5 @@ if($errorCount > 0){
   }
   
   $_SESSION['error'] = 'Email not found in our system ERR! '.$email;
-  header('Location: forgot.php');
+  redirectUrl('forgot.php');
 }

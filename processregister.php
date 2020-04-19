@@ -36,7 +36,8 @@ if($errorCount > 0){
     $s = '';
   }
   $_SESSION['error'] = 'You have '.$errorCount.' error'.$s.' in your form submission';
-  header('Location:register.php');
+ 
+  redirectUrl('register.php');
   
 }else{
   //save unique data tofolder
@@ -66,7 +67,8 @@ if($errorCount > 0){
     $currentUser = $allUsers[$counter];
     if($currentUser == $email.".json"){
       $_SESSION['error'] = 'Registration Failed, user already exist!';
-      header('Location: register.php');
+      redirectUrl('register.php');
+  
       
     }
   }
@@ -80,8 +82,8 @@ if($errorCount > 0){
     $_SESSION['message'] = 'Registration Successfull, you can now login!'.$first_name;
   }
    
+  redirectUrl('login.php');  
   
-  header('Location: login.php');
 }
 
 
