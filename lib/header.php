@@ -15,12 +15,39 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php">StartNG Hospital</a></h5>
         <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="index.php">Home</a>
+        <?php 
+               $path = basename($_SERVER['REQUEST_URI']);
+                ?>
+            <a class="
+            <?php 
+                    if($path=='index.php'){
+                        echo 'btn btn-primary';
+                   }
+                ?>
+            p-2 text-dark" href="index.php">Home</a>
             <?php if(!isset($_SESSION['loggedIn']) && empty($_SESSION['loggedin'])){ ?>
-              
-                <a class="p-2 text-dark" href="login.php">Login</a> 
-                <a class="btn btn-primary" href="register.php">Register</a> 
-                <a class="p-2 text-dark" href="forgot.php">Forgot Password</a>
+             
+                <a class="
+                <?php 
+                    if($path=='login.php'){
+                        echo 'btn btn-primary';
+                   }
+                ?>
+                p-2 text-dark" href="login.php">Login</a> 
+                <a class="
+                <?php 
+                    if($path=='register.php'){
+                        echo 'btn btn-primary';
+                   }
+                ?>
+                p-2 text-dark" href="register.php">Register</a> 
+                <a class="
+                <?php 
+                    if($path=='forgot.php'){
+                        echo 'btn btn-primary';
+                   }
+                ?>
+                p-2 text-dark" href="forgot.php">Forgot Password</a>
             <?php }else{ ?>
               
                 <a class="p-2 text-dark" href="dashboard.php">Dashboard</a>                

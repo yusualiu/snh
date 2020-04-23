@@ -55,11 +55,7 @@ function redirectUrl($url = ''){
 }
 
 
-function sendEmail(
-  $subject = "", 
-  $message = "",
-  $email = ""
-  ){
+function sendEmail($subject = "",$message = "",$email = ""){
   
   $headers = "From: no-reply@snh.org" . "\r\n" .
   "CC: aliuiyusuf@snh.org";
@@ -68,13 +64,13 @@ function sendEmail(
 
   if($try){
       
-      set_alert('message',"Password reset has been sent to your email: " . $email);        
-      redirect_to("login.php");
+      setAlert('message',"Password reset has been sent to your email: " . $email);        
+      redirectUrl("login.php");
 
   }else{
       
-      set_alert('error',"Something went wrong, we could not send password reset to :" . $email);             
-      redirect_to("forgot.php");
+      setAlert('error',"Something went wrong, we could not send password reset to :" . $email);             
+      redirectUrl("forgot.php");
   }
 
 }

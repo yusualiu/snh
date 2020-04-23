@@ -1,6 +1,7 @@
 <?php 
 session_start();
-require_once 'functions/user.php';
+require_once('functions/user.php');
+require_once('functions/alert.php');
 // Collect user data
 // verifying the data, validation
 $errorCount = 0;
@@ -69,8 +70,7 @@ if($errorCount > 0){
         die();
       }
     }
-  }
-  $_SESSION['error'] = 'Invalid Email or Password';
-  
+  }  
+  setAlert('error',"Invalid Email or Password");
   redirectUrl('login.php');
 }

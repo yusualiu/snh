@@ -8,13 +8,11 @@ require_once('functions/alert.php');
     <div class="row col-6">
         <h3>Login</h3>
     </div>
-    <div class="row col-6">
-    <p><?php printAlert();?></p>			
-
-        <form action="processlogin.php" method="POST">
-
-        <P>
-          <label for="">Email</label>
+    <div class="row col-6">    			
+<form action="processlogin.php" method="POST">
+<p><?php printAlert();?></p>
+ <P>
+   <label for="">Email</label>
           <input 
           <?php
             if(isset($_SESSION['email'])){
@@ -22,19 +20,19 @@ require_once('functions/alert.php');
             }
           ?>
           type="email" class="form-control" name="email" placeholder="Email"  />
-        </P>
-        <P>
+</P>
+   <P>
           <label for="">Password</label>
           <input type="password" name="password" class="form-control" placeholder="Password"  />
-        </P>  
+   </P>  
 
-        <button class="btn btn-sm btn-primary" type="submit">login</button>
-        <p>
-                <a href="forgot.php">Forgot Password</a><br />
-                <a href="register.php">Don't have an account? Register</a>
-            </p>
+    <p><button class="btn btn-sm btn-primary" type="submit">login</button></p>
+    <p>
+     <a href="forgot.php">Forgot Password</a><br />
+     <a href="register.php">Don't have an account? Register</a>
+     </p>
         </form>
-        </div>
+  </div>
 </div>
 		
 <?php include_once('lib/footer.php'); ?>
