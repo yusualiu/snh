@@ -1,5 +1,5 @@
 <?php 
-include_once'lib/header.php';
+include_once('lib/header.php');
 if(!isset($_SESSION['loggedin'])){
   header('Location: login.php');
 }

@@ -1,15 +1,25 @@
 
 <?php 
-include_once'lib/header.php';
-require_once 'functions/alert.php';
-require_once 'functions/user.php';
+include_once('lib/header.php');
+require_once('functions/alert.php');
+require_once('functions/user.php');
 $emailErr = "";
 if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){ 
   redirectUrl('dashboard.php');
 }
 ?>
 
-				<h2><span>Register now</span></h2>
+<div class="container">
+    <div class="row col-6">
+        <h3>Register</h3>
+    </div>
+    <div class="row col-6">
+        <p><strong>Welcome, Please Register</strong></p>
+    </div>
+    <div class="row col-6">
+        <p>All Fields are required</p>
+    </div>
+    <div class="row col-6">
         <form action="processregister.php" method="POST">
 <?php printAlert();?>
   <P>
@@ -20,7 +30,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
         echo "value=".$_SESSION['first_name'];
       }
     ?> 
-     type="text" name="first_name" placeholder="First Name" />
+     type="text" class="form-control"  name="first_name" placeholder="First Name" />
   </P>
   <P>
     <label for="">Last Name</label>
@@ -30,7 +40,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
         echo "value=".$_SESSION['last_name'];
       }
     ?>
-    type="text" name="last_name" placeholder="Last Name" />
+    type="text" class="form-control" name="last_name" placeholder="Last Name" />
   </P>
   <P>
     <label for="">Email</label>
@@ -41,15 +51,15 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
         echo "value=".$_SESSION['email'];
       }
     ?>
-    type="email" name="email" placeholder="Email" />
+    type="email" class="form-control" name="email" placeholder="Email" />
   </P>
   <P>
     <label for="">Password</label>
-    <input type="password" name="password" placeholder="Password"  />
+    <input type="password" class="form-control"  name="password" placeholder="Password"  />
   </P>
   <p>
   <label for="">Gender</label><br/>
-    <select name="gender"  >
+    <select class="form-control"  name="gender"  >
     
       <option value="">Select One</option>
       <option 
@@ -71,7 +81,7 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
   
   <p>
   <label for="">Designation</label> <br/>
-    <select name="designation" >
+    <select class="form-control" name="designation" >
       <option value="">Select One</option>
       <option 
       <?php
@@ -105,11 +115,20 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
         echo "value=".$_SESSION['department'];
       }
     ?>
-     type="text" name="department" placeholder="Department" />
+     type="text" class="form-control" name="department" placeholder="Department" />
   </p>
-  <button type="submit">register</button>
+  <p>
+  <button class="btn btn-sm btn-success" type="submit">register</button>
+  </p>
+  
+  <p>
+    <a href="forgot.php">Forgot Password</a><br />
+    <a href="login.php">Already have an account? Login</a>
+  </p>
 </form>
 
+</div>
 
+</div>
 
 <?php include_once'lib/footer.php'?>

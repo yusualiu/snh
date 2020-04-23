@@ -1,12 +1,22 @@
-<?php include_once'lib/header.php';
-require_once 'functions/alert.php';
+<?php
+
+include_once('lib/header.php');
+require_once('functions/alert.php');
 
 ?>
 
-        <h2><span>Forgot Password</span></h2>
-        <p>Provide the email address associated with your account</p>      
+<div class="container">
+    <div class="row col-6">
+        <h3>Forgot Password</h3>
+    </div>
+    <div class="row col-6">
+    <p>Provide the email address associated with your account</p>
+    <p><?php printAlert();?></p>	
+
+        
+              
         <form action="processforgot.php" method="POST">
-<p><?php printAlert();?></p>
+
 <P>
     <label for="">Email</label><br/>
     <input 
@@ -15,10 +25,14 @@ require_once 'functions/alert.php';
         echo "value=".$_SESSION['email'];
       }
     ?>
-    type="email" name="email" placeholder="Email"/>
+    type="email" class="form-control" name="email" placeholder="Email"/>
   </P>
-  <button type="submit">Send Reset Code</button>
+  <p>
+  <button class="btn btn-sm btn-primary"  type="submit">Send Reset Code</button>
+  </p>
 </form>
+</div>
+</div>
        
 		
       

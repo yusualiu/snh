@@ -38,6 +38,8 @@ if($errorCount > 0){
       $passwordFromUser = password_verify($password,$passwordFromDb);
       
       if($passwordFromDb == $passwordFromUser){
+      
+       
         $_SESSION['loggedin'] = $userObject->id;
         $_SESSION['email'] = $userObject->email;
         $_SESSION['fullname'] = $userObject->first_name." ".$userObject->last_name;
@@ -47,8 +49,6 @@ if($errorCount > 0){
 
         // update user record in folder with lastloggedin 
         $userObject->lastLogin = date("Y-m-d h:i:s");
-        unlink("db/users/".$currentUser);
-       
         file_put_contents('db/users/'.$email.'.json',json_encode($userObject));
         $_SESSION['lastLogin']= $userObject->lastLogin;
         // User Access Level

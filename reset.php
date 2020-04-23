@@ -1,5 +1,6 @@
-<?php include_once'lib/header.php';
-require_once 'functions/alert.php';
+<?php 
+include_once('lib/header.php');
+require_once('functions/alert.php');
 ?>
 
 <?php 
@@ -9,16 +10,16 @@ require_once 'functions/alert.php';
   }
 
 ?>
-
-
-    <h1 >Reset Password </h1>
+  
+    <div class="container">
+    <div class="row col-6">
+        <h3>Reset Password </h3>
+    </div>
+    <div class="row col-6">
     <p>Provide the new password for your account : [email]</p>
-			
+    <p><?php printAlert();?></p>			
 		
       <form action="processreset.php" method="POST">
-
-<p><?php printAlert();?></p>
-
 
 <P>
   <label for="">Email</label><br/>
@@ -33,7 +34,7 @@ require_once 'functions/alert.php';
 </P>
 <P>
   <label for="">Enter New Password</label><br/>
-  <input type="password" name="password" placeholder="Password" />
+  <input type="password" class="form-control"  name="password" placeholder="Password" />
 </P>
 <?php 
   if(!isset($_SESSION['loggedin'])){?>
@@ -53,7 +54,7 @@ require_once 'functions/alert.php';
 </P>
   <?php }?>
 <p>
-<button type="submit">Reset Password</button>
+<button class="btn btn-sm btn-primary" type="submit">Reset Password</button>
 </p>
 
 </form>

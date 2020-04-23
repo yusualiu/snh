@@ -1,7 +1,9 @@
-<?php 
-include_once'lib/header.php';
+<?php
+include_once('lib/header.php'); 
 require_once('functions/alert.php');
 require_once('functions/user.php');
+
+
 
 if(!isset($_SESSION['loggedin'])){
   header('Location: login.php');
@@ -208,13 +210,6 @@ if(!isset($_SESSION['loggedin'])){
   </p>
   <button type="submit">Add User</button>
 </form>
-		
+	
 
-
-
-
-
-
-
-
-<?php include_once'lib/footer.php'?>
+<?php include_once('lib/footer.php'); ?>
