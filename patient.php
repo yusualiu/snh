@@ -5,9 +5,25 @@ if(!isset($_SESSION['loggedin'])){
   header('Location: login.php');
 }
 ?>
-<h3>Dashboard</h3>
-<p>Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?> and your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p>
-<p>You can book appointment with a medical staff or make payment of bill</p>
+<div class="container">
+
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+  <h3 class="text-center">Dashboard</h3>
+<p>Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?> and your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p><p>You can book appointment with a medical staff or make payment of bill</p>
+
+  
+  
+  
+  </div>
+  
+  <div class="col"></div>
+</div>
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+  
 <h2>Make payment here</h2>
 <form action="processpayment.php" method="POST">
 <p>
@@ -16,8 +32,9 @@ if(!isset($_SESSION['loggedin'])){
   </p>
   <p><button type="submit">Pay</button></p>
 </form>
-
-<h2>Book appointment here</h2>
+  </div>
+  <div class="col">
+  <h2>Book appointment here</h2>
 <form action="processbooking.php" method="POST">
 <?php dashboardMessage();?>
 
@@ -64,4 +81,10 @@ if(!isset($_SESSION['loggedin'])){
   </p>
   <p><button type="submit">Book</button></p>
 </form>
+  </div>
+  <div class="col"></div>
+  
+</div>
+
+</div>
 <?php include_once'lib/footer.php'?>
