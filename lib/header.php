@@ -50,8 +50,11 @@
                 p-2 text-dark" href="forgot.php">Forgot Password</a>
             <?php }else{ ?>
               
-                <?php ?>
-                <a class="p-2 text-dark" href="<?php echo substr($_SESSION['role'],0, -1);?>.php"><?php echo $_SESSION['role'];?></a>
+                
+                <?php if($_SESSION['role'] == 'Patients'){?>
+                    <a class="p-2 text-dark" href="<?php echo substr($_SESSION['role'],0, -1);?>.php"><?php echo $_SESSION['role'];?></a>
+                    <?php } ?>    
+                
                 <a class="p-2 text-dark" href="reset.php">Reset Password</a>
                 <a class="p-2 text-dark" href="logout.php">Logout</a>
             <?php } 
