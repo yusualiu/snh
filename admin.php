@@ -15,9 +15,11 @@ if(!isset($_SESSION['loggedin'])){
 
 
 
+<div class="container">
+<div class="row">
+  
 
-
-
+  <div class="col">
     <h3>Dashboard</h3>
 <p >Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?>,your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p>
     
@@ -210,6 +212,8 @@ if(!isset($_SESSION['loggedin'])){
   </p>
   <button type="submit">Add User</button>
 </form>
-	
+</div>	
 
+</div>
+</div>
 <?php include_once('lib/footer.php'); ?>
