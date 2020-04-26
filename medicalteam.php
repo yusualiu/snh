@@ -5,8 +5,10 @@ if(!isset($_SESSION['loggedin'])){
 }
 ?>
 
-
-      <h3>Dashboard</h3>
+<div class="row">
+  <div class="col"></div>
+  <div class="col">
+  <h3>Dashboard</h3>
 <p>Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?> and your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p>
 <h1>The Departmental Patient Appointments </h1>
 
@@ -90,5 +92,12 @@ foreach ($patientData as $key => $value) {
 
 }
 ?>
+  
+  
+  </div>
+  <div class="col"></div>
+</div>
+
+      
 
 <?php include_once'lib/footer.php'?>

@@ -49,11 +49,17 @@
                 ?>
                 p-2 text-dark" href="forgot.php">Forgot Password</a>
             <?php }else{ ?>
-              
                 
-                <?php if($_SESSION['role'] == 'Patients'){?>
+                    <?php if($_SESSION['role'] == 'Patients'){?>
                     <a class="p-2 text-dark" href="<?php echo substr($_SESSION['role'],0, -1);?>.php"><?php echo $_SESSION['role'];?></a>
-                    <?php } ?>    
+                    <?php } ?>   
+                    <?php if($_SESSION['role'] == 'Medical Team(MT)'){?>
+                    <a class="p-2 text-dark" href="medicalteam.php"><?php echo $_SESSION['role'];?></a>
+                    <?php } ?> 
+                    <?php if($_SESSION['role'] == 'Super Admin(MD)'){?>
+                    <a class="p-2 text-dark" href="admin.php"><?php echo $_SESSION['role'];?></a>
+                    <?php } ?>
+                 
                 
                 <a class="p-2 text-dark" href="reset.php">Reset Password</a>
                 <a class="p-2 text-dark" href="logout.php">Logout</a>
