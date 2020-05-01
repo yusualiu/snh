@@ -31,7 +31,7 @@ if($errorCount > 0){
     $s = '';
   }
   $_SESSION['error'] = 'You have '.$errorCount.' error'.$s.' in your form submission';
-  redirectUrl('patient.php');
+  redirectUrl('booking.php');
   
 }else{
   //Book patient
@@ -68,7 +68,7 @@ if($errorCount > 0){
         file_put_contents('db/bookings/'.$staffDepartment.'.json',json_encode($data));
         unset($data);//release memory
         $_SESSION['message'] = 'You have been Booked Successfully for this department again';   
-        redirectUrl('patient.php');
+        redirectUrl('booking.php');
         die();
         
       }
@@ -79,7 +79,7 @@ if($errorCount > 0){
     $data[] = $bookingObject;
     file_put_contents('db/bookings/'.$staffDepartment.'.json',json_encode($data));
     $_SESSION['message'] = 'You have been Booked Successfully as firsttime';         
-    redirectUrl('patient.php');
+    redirectUrl('booking.php');
     
     
     

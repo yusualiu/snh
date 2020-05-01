@@ -11,7 +11,8 @@ function printAlert(){
           echo "<div class='alert alert-".$colors[$i]."' role='alert'>" . $_SESSION[$types[$i]] .
             "</div>";
         
-          session_destroy();
+          // session_destroy();
+          unset($_SESSION[$types[$i]]);
       }
 
   }

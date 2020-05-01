@@ -67,3 +67,10 @@ Email of Patient
 Super Admin page
 -View all staff
 -View all patients
+
+***********************
+Function Abstraction
+-check through folders and count
+-sendEmail to users
+-get object from files
+- save object in files 
