@@ -13,12 +13,22 @@ if(!isset($_SESSION['loggedin'])){
       
           <h2>Make payment here</h2>
           <form action="processpayment.php" method="POST">
+
+          <p>
+            <label for="">Patient Full Name</label>
+            <input value="<?php echo $_SESSION['fullname'];?>" type="text" name="ptfullname" placeholder="Patient Name" required />
+          </p>
+          <p>
+          <label for="">Patient Email</label>
+          <input value="<?php echo $_SESSION['email'];?>" type="email" name="ptemail" placeholder="Patient Email" required />
+        </p>
           <p>
               <label for="">Makepayment</label>
               <input type="text" name="amount" placeholder="Amount" required />
             </p>
-            <p><button type="submit">Pay</button></p>
+            <p><button type="submit" name="pay">Pay</button></p>
           </form>
+          <a href="patient.php">back</a>
       </div>
       
       <div class="col"></div>

@@ -60,6 +60,7 @@ if(!isset($_SESSION['loggedin'])){
   </p>
   <p><button type="submit">Book</button></p>
 </form>
+<a href="patient.php">back</a>
   </div>
   <div class="col"></div>
   

@@ -41,7 +41,8 @@ host it
 **************************
 Patient page
 --Book Appointment with Medical Team
----Pay Bill(Blank page)
+---Pay Bill
+--
 
 -Book Appointment Form
 *Name of Patient 
@@ -74,3 +75,20 @@ Function Abstraction
 -sendEmail to users
 -get object from files
 - save object in files 
+
+Rave Flutter wave
+patient make payments
+Api Collects patient payment details and process
+Api displays page for user to input card details
+Api process card details 
+Api save transactions in transactions folder 
+Api sends email to customer(patient) and admin
+Api redirect to success page or failure page
+- Response is saved in transaction folder
+- subsequent transaction will be saved after checking if transaction ref is absence
+Patient can fetch transaction in transfolder to pull transaction based on his email 
+Admin can view users(patients) transactions to know the payments made
+Medical staff can view patients that have paid
+
+ 
+ 
