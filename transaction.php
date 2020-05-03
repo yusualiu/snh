@@ -168,7 +168,7 @@ if($payments){
             
             <th>Transaction ID </th>
             <th>Transaction REF </th>
-            <th>Amount Paid </th>
+            <th>Payment Status </th>
             <th>Currency </th>
             <th>Payment Method</th>
             <th>Patient Name</th>
@@ -187,7 +187,7 @@ if($payments){
             <td><?php echo $counter++;?></td>
             <td><?php echo $transactions['transactionid'];?></td>
             <td><?php echo $transactions['transactionref'];?></td>
-            <td><?php echo $transactions['chargeamount'];?></td>
+            <td><?php echo $transactions['chargeamount'] ='PAID';?></td>
             <td><?php echo $transactions['chargecurrency'];?></td>
             <td><?php echo $transactions['paymenttype'];?></td>
             <td><?php echo $transactions['custname'];?></td>
