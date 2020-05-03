@@ -9,7 +9,8 @@ if(!isset($_SESSION['loggedin'])){
   <div class="col"></div>
   <div class="col">
   <h3>Dashboard</h3>
-<p>Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?> and your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p>
+<p>Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?>.Your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p>
+<p>Click <a href="transaction.php">here</a> to view payment history</p>
 <h1>The Departmental Patient Appointments </h1>
 
 <?php	
@@ -61,7 +62,7 @@ if($patientData[0] !='Booking is Pending at the moment' ){
 // Process departmental appointments
 foreach ($patientData as $key => $value) {
   foreach($value as $bookings){
-   
+    
     ?>
    
         <tr>
@@ -79,6 +80,7 @@ foreach ($patientData as $key => $value) {
         
      
   <?php
+  
   }
   
   

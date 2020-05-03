@@ -88,7 +88,10 @@ Api redirect to success page or failure page
 - subsequent transaction will be saved after checking if transaction ref is absence
 Patient can fetch transaction in transfolder to pull transaction based on his email 
 Admin can view users(patients) transactions to know the payments made
+-fetch all transactions 
 Medical staff can view patients that have paid
-
+-view transactions based on patients with associated appointments
+--get all patients associated to medical staff to medical staff
+-- get all transaction done by the patients 
  
  

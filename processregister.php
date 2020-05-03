@@ -68,7 +68,7 @@ if($errorCount > 0){
     if($currentUser == $email.".json"){
       $_SESSION['error'] = 'Registration Failed, user already exist!';
       redirectUrl('register.php');
-  
+      exit();
       
     }
   }
