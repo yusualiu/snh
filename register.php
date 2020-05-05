@@ -10,17 +10,14 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
 ?>
 
 <div class="container">
-    <div class="row col-6">
-        <h3>Register</h3>
-    </div>
-    <div class="row col-6">
-        <p><strong>Welcome, Please Register</strong></p>
-    </div>
-    <div class="row col-6">
-        <p>All Fields are required</p>
-    </div>
-    <div class="row col-6">
-        <form action="processregister.php" method="POST">
+    
+ <div class="row">
+<div class="col-sm"></div>
+
+<div class="col-sm mt-5 my-5">  
+  <h3>Sign Up</h3>
+  <p>All Fields are required</p> 
+<form action="processregister.php" method="POST">
 <?php printAlert();?>
   <P>
     <label for="">First Name</label>
@@ -126,9 +123,9 @@ if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){
     <a href="login.php">Already have an account? Login</a>
   </p>
 </form>
-
+    </div>
+<div class="col-sm"></div>
 </div>
-
 </div>
 
 <?php include_once'lib/footer.php'?>

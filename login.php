@@ -6,9 +6,12 @@ require_once('functions/alert.php');
 
 <div class="container">
 
-<h3 class='login'>Login</h3>
-  <div class="mx-auto d-flex justify-content-center"> 
-  			
+
+<div class="row">
+<div class="col-sm"></div>
+
+    <div class="col-sm mt-5 my-5">
+   <h3>Sign in</h3>
 <form action="processlogin.php" method="POST">
 <p><?php printAlert();?></p>
  <P>
@@ -31,8 +34,16 @@ require_once('functions/alert.php');
      <a href="forgot.php">Forgot Password</a><br />
      <a href="register.php">Don't have an account? Register</a>
      </p>
-        </form>
-  </div>
+        </form>   
+
+
+    
+    </div>
+    <div class="col-sm"></div>
+</div>
+  
+
+  
   
 </div>
 		

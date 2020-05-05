@@ -6,10 +6,12 @@ require_once('functions/alert.php');
 ?>
 
 <div class="container">
-    <div class="row col-6">
+  <div class="row">
+<div class="col-sm"></div>
+<div class="col-sm  mt-5 my-5"> 
         <h3>Forgot Password</h3>
-    </div>
-    <div class="row col-6">
+  
+    
     <p>Provide the email address associated with your account</p>
     <p><?php printAlert();?></p>	
 
@@ -32,10 +34,11 @@ require_once('functions/alert.php');
   </p>
 </form>
 </div>
+<div class="col-sm"></div>
 </div>
        
 		
-      
+</div>     
 
 
 <?php include_once'lib/footer.php'?>

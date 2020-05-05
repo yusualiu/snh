@@ -1,157 +1,130 @@
+
 <?php 
 include_once('lib/header.php');
 require_once('functions/alert.php');
-if(!isset($_SESSION['loggedin'])){
-  header('Location: login.php');
+require_once('functions/user.php');
+$emailErr = "";
+if(isset($_SESSION['loggedin']) && !empty($_SESSION['loggedin'])){ 
+  redirectUrl('dashboard.php');
 }
 ?>
+
 <div class="container">
+    
+ <div class="row">
+<div class="col-sm"></div>
 
-<?php if($_SESSION['role']=='Patients'){ ?>
-
-
-  <div class="row">
-  
-  <div class="col"></div>
-  <div class="col">
-  <h3 class="text-center">Your Transaction History</h3>
-<?php 
-//  fetch all the records
-$allTransactions = scandir("db/transactions/");
-$countTransactions = count($allTransactions);
-$transactionsno = $countTransactions-1;
-$patientData = [];
-  $email = $_SESSION['email'];
-//  fetch all the records  that matches patient transactions
-for ($counter=1; $counter < $countTransactions; $counter++) { 
-  if(file_exists('db/transactions/'.$email.'.json')){
-     //open or read json data
-    $transactions= file_get_contents('db/transactions/'.$email.'.json'); 
-    $data = json_decode($transactions, true);
-    $patientData[] = $data;
-    break;
-  
-  }else{
+<div class="col-sm">   
    
-    $patientData[] = 'Transaction is Pending at the moment';
-  
-  }
-
-}
-if($patientData[0] !='Transaction is Pending at the moment' ){
-
-
-  ?>
-  
-   <table>
-          <tr>
-            <th>S/No</th>
-            
-            <th>Transaction ID </th>
-            <th>Transaction REF </th>
-            <th>Amount Paid </th>
-            <th>Currency </th>
-            <th>Payment Method</th>
-            <th>Patient Name</th>
-            <th>Patient Email</th>
-            <th>Transaction Date</th>
-            
-          </tr>
-  <?php
-  // Process patient transactions
-  foreach ($patientData as $key => $value) {
-    foreach($value as $transactions){
-     
-      ?>
-     
-          <tr>
-            <td><?php echo $counter++;?></td>
-            <td><?php echo $transactions['transactionid'];?></td>
-            <td><?php echo $transactions['transactionref'];?></td>
-            <td><?php echo $transactions['chargeamount'];?></td>
-            <td><?php echo $transactions['chargecurrency'];?></td>
-            <td><?php echo $transactions['paymenttype'];?></td>
-            <td><?php echo $transactions['custname'];?></td>
-            <td><?php echo $transactions['custemail'];?></td>
-            <td><?php echo $transactions['transactiondate'];?></td>         
-            
-          </tr>
-          
-       
+        <form action="processregister.php" method="POST">
+<?php printAlert();?>
+  <P>
+    <label for="">First Name</label>
+    <input 
     <?php
-    }
+      if(isset($_SESSION['first_name'])){
+        echo "value=".$_SESSION['first_name'];
+      }
+    ?> 
+     type="text" class="form-control"  name="first_name" placeholder="First Name" />
+  </P>
+  <P>
+    <label for="">Last Name</label>
+    <input 
+    <?php
+      if(isset($_SESSION['last_name'])){
+        echo "value=".$_SESSION['last_name'];
+      }
+    ?>
+    type="text" class="form-control" name="last_name" placeholder="Last Name" />
+  </P>
+  <P>
+    <label for="">Email</label>
+    <span class="error"> <?php echo $emailErr;?></span>
+    <input 
+    <?php
+      if(isset($_SESSION['email'])){
+        echo "value=".$_SESSION['email'];
+      }
+    ?>
+    type="email" class="form-control" name="email" placeholder="Email" />
+  </P>
+  <P>
+    <label for="">Password</label>
+    <input type="password" class="form-control"  name="password" placeholder="Password"  />
+  </P>
+  <p>
+  <label for="">Gender</label><br/>
+    <select class="form-control"  name="gender"  >
     
-    
-  }
-  ?>
-     </table>
-  <?php
-  }else{
-     // show pending if no record is found	
-    echo $patientData[0];
+      <option value="">Select One</option>
+      <option 
+      <?php
+      if(isset($_SESSION['gender']) && $_SESSION['gender'] == 'Male'){
+        echo "selected";
+      }
+      ?>
+      >Male</option>
+      <option
+      <?php
+      if(isset($_SESSION['gender']) && $_SESSION['gender'] == 'Female'){
+        echo "selected";
+      }
+    ?>
+       >Female</option>
+    </select>
+  </p>
   
-  }
-  ?>
- 
+  <p>
+  <label for="">Designation</label> <br/>
+    <select class="form-control" name="designation" >
+      <option value="">Select One</option>
+      <option 
+      <?php
+      if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Medical Team(MT)'){
+        echo "selected";
+      }
+    ?>
+      >Medical Team(MT)</option>
+      <option 
+      <?php
+      if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Patients'){
+        echo "selected";
+      }
+    ?>
+      >Patients</option>
+      <option 
+      <?php
+      if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Super Admin(MD)'){
+        echo "selected";
+      }
+    ?>
+      >Super Admin(MD)</option>
+    </select>
+  </p>
+
+  <p>
+    <label for="">Department</label>
+    <input
+    <?php
+      if(isset($_SESSION['department'])){
+        echo "value=".$_SESSION['department'];
+      }
+    ?>
+     type="text" class="form-control" name="department" placeholder="Department" />
+  </p>
+  <p>
+  <button class="btn btn-sm btn-success" type="submit">register</button>
+  </p>
+  
+  <p>
+    <a href="forgot.php">Forgot Password</a><br />
+    <a href="login.php">Already have an account? Login</a>
+  </p>
+</form>
     </div>
-
-    <a href="patient.php">back</a>
- 
-    <div class="col"></div>
-    </div>
-    <?php };?>
- 
-   
-
-<div class="row">
-<?php if($_SESSION['role']=='Medical Team(MT)'){?>
-  <div class="col"></div>
-  <div class="col">
-  <h3 class="text-center">Patients Payment History</h3>
-  <?php 
-  $email  = $_SESSION['ptemail'];
- //  fetch all the records
-$allTransactions = scandir("db/transactions/");
-$countTransactions = count($allTransactions);
-$transactionsno = $countTransactions-1;
-$patientData = [];
-for ($counter=1; $counter < $countTransactions; $counter++) { 
-  foreach($email as $newEmail){
-    // echo $newEmail;  
-    if(file_exists('db/transactions/'.$newEmail.'.json')){
-
-      //open or read json data
-      $transactions= file_get_contents('db/transactions/'.$newEmail.'.json'); 
-      $data = json_decode($transactions, true);
-      $patientData[] = $data;
-
-      echo 'Yes';
-    
-    }else{
-      echo 'No';
-    }
-  
-  }  
-break;
-
-}
-
- // Process patient transactions
- foreach ($patientData as $key => $value) {
-  foreach($value as $transactions){
-    print_r($transactions);
-
-  }
- }
-
-  ?>
-  
-  </div>
-  <a href="medicalteam.php">back</a>
-  <div class="col"></div>
-
-<?php };?>
+<div class="col-sm"></div>
+</div>
 </div>
 
-</div>
 <?php include_once'lib/footer.php'?>

@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="css/style.css">
     
 </head>
-<body class='well'>
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-info border-bottom shadow-sm fixed-top">
+<body>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
         <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php">StartNG Hospital</a></h5>
         <nav class="my-2 my-md-0 mr-md-3 ">
         <?php 
@@ -70,3 +70,4 @@
         </nav>
        
     </div>
+    
