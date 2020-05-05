@@ -7,7 +7,9 @@ table, th, td {
 .mt-5, .my-5 {
   margin-top: 8rem!important;
 }
-
+.my-4{
+  margin-top: 4rem!important;
+}
 
 
 .bd-placeholder-img {

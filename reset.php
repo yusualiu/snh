@@ -12,10 +12,13 @@ require_once('functions/alert.php');
 ?>
   
     <div class="container">
-    <div class="row col-6">
+    
         <h3>Reset Password </h3>
-    </div>
-    <div class="row col-6">
+   
+        <div class="row">
+<div class="col-sm"></div>
+
+<div class="col-sm my-4">
     <p>Provide the new password for your account : [email]</p>
     <p><?php printAlert();?></p>			
 		
@@ -30,7 +33,7 @@ require_once('functions/alert.php');
     }
 
   ?>
-  type="email" name="email" placeholder="Email" />
+  type="email" name="email"  class="form-control" placeholder="Email" />
 </P>
 <P>
   <label for="">Enter New Password</label><br/>
@@ -59,5 +62,9 @@ require_once('functions/alert.php');
 
 </form>
 		
+</div>
+<div class="col-sm"></div>
+</div>
+</div>
 
 <?php include_once'lib/footer.php'?>

@@ -9,10 +9,10 @@ if(!isset($_SESSION['loggedin'])){
 
 
 <div class="row">
-  <div class="col"></div>
+<div class="col-sm"></div>
  
-  <div class="col">
-  <h2>Book appointment here</h2>
+<div class="col-sm my-4">
+  <h2>Book appointment</h2>
 <form action="processbooking.php" method="POST">
 
 <?php printAlert();?>
@@ -20,31 +20,31 @@ if(!isset($_SESSION['loggedin'])){
 
   <p>
     <label for="">Patient Full Name</label>
-    <input value="<?php echo $_SESSION['fullname'];?>" type="text" name="ptfullname" placeholder="Patient Name" required />
+    <input value="<?php echo $_SESSION['fullname'];?>" type="text" class="form-control" name="ptfullname" placeholder="Patient Name" required />
   </p>
   
 
   <p>
     <label for="">Patient Email</label>
-    <input value="<?php echo $_SESSION['email'];?>" type="email" name="ptemail" placeholder="Patient Email" required />
+    <input value="<?php echo $_SESSION['email'];?>" type="email" class="form-control" name="ptemail" placeholder="Patient Email" required />
   </p>
   
   <p>
     <label for="">Date of Appointment</label>
-    <input  type="date" name="appointdate" placeholder="Date" required />
+    <input  type="date" class="form-control" name="appointdate" placeholder="Date" required />
   </p>
   <p>
     <label for="">Time of Appointment</label>
-    <input  type="time" name="appointtime" placeholder="Time" required />
+    <input  type="time" class="form-control" name="appointtime" placeholder="Time" required />
   </p>
   <p>
     <label for="">Nature of Appointment</label>
-    <input  type="text" name="appointnature" placeholder="Nature of apointment" required />
+    <input  type="text" class="form-control" name="appointnature" placeholder="Nature of apointment" required />
   </p>
 
   <p>
     <label for="">Initial Complaint</label>
-    <textarea rows="4" cols="50" name="complaint" required></textarea>
+    <textarea class="form-control" rows="4" cols="50" name="complaint" required></textarea>
   </p>
 
 
@@ -56,15 +56,15 @@ if(!isset($_SESSION['loggedin'])){
         echo "value=".$_SESSION['appointdepartment'];
       }
     ?>
-     type="text" name="appointdepartment" placeholder="Department" required />
+     type="text" class="form-control" name="appointdepartment" placeholder="Department" required />
   </p>
-  <p><button type="submit">Book</button></p>
+  <p class="text-center"><button type="submit" class="btn btn-success">Book</button></p>
 </form>
-<a href="patient.php">back</a>
+
   </div>
-  <div class="col"></div>
+  <div class="col-sm"></div>
   
 </div>
-
+<a href="patient.php" class="btn btn-bg btn-outline-secondary">back</a>
 </div>
 <?php include_once'lib/footer.php'?>
