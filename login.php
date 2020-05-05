@@ -5,10 +5,10 @@ require_once('functions/alert.php');
 ?>
 
 <div class="container">
-    <div class="row col-6">
-        <h3>Login</h3>
-    </div>
-    <div class="row col-6">    			
+
+<h3 class='login'>Login</h3>
+  <div class="mx-auto d-flex justify-content-center"> 
+  			
 <form action="processlogin.php" method="POST">
 <p><?php printAlert();?></p>
  <P>
@@ -33,6 +33,7 @@ require_once('functions/alert.php');
      </p>
         </form>
   </div>
+  
 </div>
 		
 <?php include_once('lib/footer.php'); ?>

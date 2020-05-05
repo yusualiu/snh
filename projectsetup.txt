@@ -93,5 +93,11 @@ Medical staff can view patients that have paid
 -view transactions based on patients with associated appointments
 --get all patients associated to medical staff to medical staff
 -- get all transaction done by the patients 
+ *********************************************
+
+ style the landing, login, registration, forgot and reset password page
+ login page
  
- 
+ --put content in a card 
+ --style the navigation header menus
+ -- style the login and registration buttons
