@@ -16,14 +16,15 @@ if(!isset($_SESSION['loggedin'])){
 
 
 <div class="container">
-<div class="row">
+<div class="row my-4">
   
 
-  <div class="col">
+ 
     <h3>Dashboard</h3>
 <p >Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?>,your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p>
 <p>Click <a href="transaction.php">here</a> to view all transaction history</p>
-    
+</div> 
+<div class="row">
   <?php 
   //Loop through the users folder to fetch all users into container
 
@@ -112,7 +113,10 @@ if(!isset($_SESSION['loggedin'])){
   }
   
   ?>  
-		<br>
+    </div>
+    <div class="row my-4">
+      <div class="col">
+     
     <p>Add User below</p>
       <form action="processregister.php" method="POST">
 <?php printAlert();?>
@@ -124,7 +128,7 @@ if(!isset($_SESSION['loggedin'])){
         echo "value=".$_SESSION['first_name'];
       }
     ?> 
-     type="text" name="first_name" placeholder="First Name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required/>
+     type="text" name="first_name" class="form-control" placeholder="First Name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required/>
   </P>
   <P>
     <label for="">Last Name</label>
@@ -134,7 +138,7 @@ if(!isset($_SESSION['loggedin'])){
         echo "value=".$_SESSION['last_name'];
       }
     ?>
-    type="text" name="last_name" placeholder="Last Name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required />
+    type="text" name="last_name" class="form-control" placeholder="Last Name" pattern="[a-zA-Z][a-zA-Z ]{2,}" required />
   </P>
   <P>
     <label for="">Email</label>
@@ -145,15 +149,15 @@ if(!isset($_SESSION['loggedin'])){
         echo "value=".$_SESSION['email'];
       }
     ?>
-    type="email" name="email" placeholder="Email" required/>
+    type="email" name="email" class="form-control" placeholder="Email" required/>
   </P>
   <P>
     <label for="">Password</label>
-    <input type="password" name="password" placeholder="Password" required />
+    <input type="password" name="password" class="form-control" placeholder="Password" required />
   </P>
   <p>
   <label for="">Gender</label>
-    <select name="gender" required >
+    <select class="form-control" name="gender" required >
     
       <option value="">Select One</option>
       <option 
@@ -175,7 +179,7 @@ if(!isset($_SESSION['loggedin'])){
   
   <p>
   <label for="">Designation</label>
-    <select name="designation" required>
+    <select class="form-control" name="designation" required>
       <option value="">Select One</option>
       <option 
       <?php
@@ -209,12 +213,12 @@ if(!isset($_SESSION['loggedin'])){
         echo "value=".$_SESSION['department'];
       }
     ?>
-     type="text" name="department" placeholder="Department" required />
+     type="text" class="form-control" name="department" placeholder="Department" required />
   </p>
-  <button type="submit">Add User</button>
+  <button type="submit" class="btn btn-success">Add User</button>
 </form>
-</div>	
-
+</div>
+<div class="col"></div>
 </div>
 </div>
 <?php include_once('lib/footer.php'); ?>

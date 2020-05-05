@@ -4,13 +4,14 @@ if(!isset($_SESSION['loggedin'])){
   header('Location: login.php');
 }
 ?>
-
+<div class="container">
 <div class="row">
-  <div class="col"></div>
-  <div class="col">
+  
   <h3>Dashboard</h3>
 <p>Welcome  <?php echo $_SESSION['fullname'];?> You are loggedin as a <?php echo $_SESSION['role'];?>.Your registration date is <?php echo $_SESSION['createdTime'];?> and your last login time is <?php echo $_SESSION['lastLogin'];?>  </p>
 <p>Click <a href="transaction.php">here</a> to view payment history</p>
+</div>
+<div class="row">
 <h1>The Departmental Patient Appointments </h1>
 
 <?php	
@@ -97,9 +98,9 @@ foreach ($patientData as $key => $value) {
   
   
   </div>
-  <div class="col"></div>
+  <div class="row"></div>
 </div>
 
-      
+    
 
 <?php include_once'lib/footer.php'?>

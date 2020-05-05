@@ -14,8 +14,7 @@ if(!isset($_SESSION['loggedin'])){
 
   <div class="row">
   
-  <div class="col"></div>
-  <div class="col">
+  
   <h3 class="text-center">Your Transaction History</h3>
 <?php 
 //  fetch all the records
@@ -95,11 +94,11 @@ if($patientData[0] !='Transaction is Pending at the moment' ){
   }
   ?>
  
-    </div>
+    
 
     <a href="patient.php">back</a>
  
-    <div class="col"></div>
+   
     </div>
     <?php };?>
  
@@ -109,8 +108,7 @@ if($patientData[0] !='Transaction is Pending at the moment' ){
 <!-- This is for the Medical staff -->
 <?php if($_SESSION['role']=='Medical Team(MT)'){?>
 <div class="row">
-  <div class="col"></div>
-  <div class="col">
+  
   <h3 class="text-center">Patients Payment History</h3>
   
  <?php 
@@ -215,9 +213,9 @@ if($payments){
  
  
   
-  </div>
+  
   <a href="medicalteam.php">back</a>
-  <div class="col"></div>
+  
   </div>
 <?php };?>
 
@@ -228,8 +226,7 @@ if($payments){
 <?php if($_SESSION['role']=='Super Admin(MD)'){?>
   <div class="row">
   
-    <div class="col"></div>
-    <div class="col">
+   
     <h3 class="text-center">All Transactions History</h3>
   <?php
     $allTransactions = array_diff(scandir("db/transactions/"), array('.', '..'));
@@ -294,9 +291,9 @@ foreach($transactions as $key){
   ?>
   
     
-    </div>
+   
     <a href="admin.php">back</a>
-    <div class="col"></div>
+    
   </div>
 <?php };?>
 
