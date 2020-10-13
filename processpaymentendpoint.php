@@ -8,7 +8,7 @@ session_start();
         $currency = "NGN"; //Correct Currency from Server
 
         $query = array(
-            "SECKEY" => "FLWSECK_TEST-c7bdda4282dcdd1f29c64ae0be705eb7-X",
+            "SECKEY" => "yourkey here",
             "txref" => $ref
         );
 
